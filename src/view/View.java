@@ -1,6 +1,7 @@
 package view;
 
 import controller.Controller;
+import model.Sale;
 
 /**
  * This is a placeholder for the view. It contains only hardcoded calls to the controller.
@@ -24,5 +25,7 @@ public class View {
         System.out.println("Starting sample execution.");
         contr.startSale();
         System.out.println("After call to sartSale()");
+        String saleInfo = contr.addItem(1);
+        System.out.println("saleInfo: " + saleInfo);
     }
 }

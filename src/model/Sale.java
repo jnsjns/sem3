@@ -1,5 +1,6 @@
 package model;
 
+import integration.ItemDTO;
 import java.time.LocalDateTime;
 
 /**
@@ -13,6 +14,10 @@ public class Sale {
      */
     public Sale() {
         saleTime = LocalDateTime.now();
+    }
+    
+    public String addItem(ItemDTO item){
+        return null;
     }
 
 }
