@@ -10,7 +10,7 @@ package integration;
  * @author Jonas
  */
 public class ExternalSystemHandler {
-    private ItemRegistry itemReg = new ItemRegistry();
+    private final ItemRegistry itemReg = new ItemRegistry();
     
     public ItemRegistry getItemRegistry(){
         return itemReg;

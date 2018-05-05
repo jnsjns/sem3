@@ -35,5 +35,7 @@ public class View {
         saleInfo = contr.addItem(1);
         System.out.println(saleInfo);
         System.out.println("Completing sale");
+        double totalPrice = contr.completeSale();
+        System.out.println("Total price to pay with tax: " + totalPrice);
     }
 }

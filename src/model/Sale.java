@@ -9,12 +9,15 @@ import java.util.List;
  * Collects all information regarding a particular sale.
  */
 public class Sale {
-    private LocalDateTime saleTime;
+    private LocalDateTime saleTimeStart;
+    private LocalDateTime saleTimeEnd;
     private int runningTotal;
     private int itemPrice;
+    private double totalPrice;
     private String itemName;
     private String saleInfo;
     private List<OrderLine> orderLines;
+    private static final double TAX_PERCENTAGE = 15;
     
     
     /**
@@ -22,7 +25,7 @@ public class Sale {
      * on the receipt.
      */
     public Sale() {
-        saleTime = LocalDateTime.now();  
+        saleTimeStart = LocalDateTime.now();  
         this.orderLines = new ArrayList<OrderLine>();
     }
     
@@ -46,10 +49,18 @@ public class Sale {
         for(OrderLine orderLine : orderLines){
             stringBuilder.append("Name: " + orderLine.getName() + "  Price: " + orderLine.getPrice() + "\n");
         }
-        stringBuilder.append("\nRunning Total: " + runningTotal);
+        stringBuilder.append("\nRunning Total: " + runningTotal + "\n");
         return stringBuilder.toString();         
     }
     
+    public double completeSale(){
+        saleTimeEnd = LocalDateTime.now();
+        return calculateTax();
+    }
+    
+    public double calculateTax(){
+        return totalPrice = ((double)runningTotal * (1+TAX_PERCENTAGE/100));    
+    }
     
 
 }

@@ -10,7 +10,7 @@ import model.Sale;
  */
 public class Controller {
     private Sale sale;
-    private ItemRegistry itemRegistry;
+    private final ItemRegistry itemRegistry;
     
     public Controller(ExternalSystemHandler exHandler){
         this.itemRegistry = exHandler.getItemRegistry();
@@ -28,5 +28,9 @@ public class Controller {
         ItemDTO item = itemRegistry.getItem(itemId);
         String saleInfo = sale.addItem(item);
         return saleInfo;
+    }
+    
+    public double completeSale(){
+        return sale.completeSale();
     }
 }
