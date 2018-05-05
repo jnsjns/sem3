@@ -9,8 +9,7 @@ import java.util.List;
  * Collects all information regarding a particular sale.
  */
 public class Sale {
-    private LocalDateTime saleTimeStart;
-    private LocalDateTime saleTimeEnd;
+    private LocalDateTime saleTime;
     private int runningTotal;
     private int itemPrice;
     private double totalPrice;
@@ -25,7 +24,7 @@ public class Sale {
      * on the receipt.
      */
     public Sale() {
-        saleTimeStart = LocalDateTime.now();  
+        saleTime = LocalDateTime.now();  
         this.orderLines = new ArrayList<OrderLine>();
     }
     
@@ -54,7 +53,6 @@ public class Sale {
     }
     
     public double completeSale(){
-        saleTimeEnd = LocalDateTime.now();
         return calculateTax();
     }
     
@@ -62,5 +60,26 @@ public class Sale {
         return totalPrice = ((double)runningTotal * (1+TAX_PERCENTAGE/100));    
     }
     
+    public void pay(Payment payment){
+       double change = payment.calculateChange(totalPrice, payment.getPayment());
+       Receipt receipt = new Receipt(this, payment, change);
+       Printer printer = new Printer(receipt.createPrintableReceipt());
+       printer.printReceipt();
+    }
+    
+    public LocalDateTime getSaleTime(){
+        return this.saleTime;
+    }
+    public List getOrderLines(){
+        return this.orderLines;
+    }
+    
+    public int getTotalPrice(){
+        return this.runningTotal;
+    }
+    
+    public double getTotalPriceAfterTax(){
+        return this.totalPrice;
+    }
 
 }

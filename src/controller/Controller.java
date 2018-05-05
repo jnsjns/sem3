@@ -3,6 +3,7 @@ package controller;
 import integration.ExternalSystemHandler;
 import integration.ItemDTO;
 import integration.ItemRegistry;
+import model.Payment;
 import model.Sale;
 
 /**
@@ -11,8 +12,10 @@ import model.Sale;
 public class Controller {
     private Sale sale;
     private final ItemRegistry itemRegistry;
+    private final ExternalSystemHandler exHandler;
     
     public Controller(ExternalSystemHandler exHandler){
+        this.exHandler = new ExternalSystemHandler();
         this.itemRegistry = exHandler.getItemRegistry();
     }
     
@@ -32,5 +35,11 @@ public class Controller {
     
     public double completeSale(){
         return sale.completeSale();
+    }
+    
+    public void enterPaidAmount(int paidAmount){
+        Payment payment = new Payment(paidAmount);
+        sale.pay(payment);
+        exHandler.logSale(sale);
     }
 }

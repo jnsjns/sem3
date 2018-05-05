@@ -5,6 +5,9 @@
  */
 package integration;
 
+import model.Sale;
+
+
 /**
  *
  * @author Jonas
@@ -19,6 +22,10 @@ public class ExternalSystemHandler {
     public ItemDTO getItem(int ItemId){
         ItemDTO item = itemReg.getItem(ItemId);
         return item;
+    }
+    
+    public void logSale(Sale sale){
+        
     }
     
 }
