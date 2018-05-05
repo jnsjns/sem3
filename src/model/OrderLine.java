@@ -3,33 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package integration;
+package model;
 
 /**
  *
  * @author Jonas
  */
-public final class ItemDTO {
-    private final int id;
+public final class OrderLine {
     private final String name;
     private final int price;
     
-    public ItemDTO(int id, String name, int price){
-        this.id = id;
+    public OrderLine(String name, int price){
         this.name = name;
         this.price = price;
     }
     
-    public int getId(ItemDTO item){
-        return this.id;
-    }
-    
-    public int getPrice(ItemDTO item){
-        return this.price;
-    }
-    
-    public String getName(ItemDTO item){
+    public String getName(){
         return this.name;
     }
     
+    public int getPrice(){
+        return this.price;
+    }
 }

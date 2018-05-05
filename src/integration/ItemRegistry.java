@@ -21,7 +21,7 @@ public class ItemRegistry {
     
     public ItemDTO getItem(int itemId){
         for(ItemDTO item : items){
-            if (item.GetId(item) == itemId){
+            if (item.getId(item) == itemId){
                 return item;
             }
         }
@@ -32,6 +32,7 @@ public class ItemRegistry {
         items.add(new ItemDTO(1, "banana", 20));
         items.add(new ItemDTO(2, "tomato", 59));
         items.add(new ItemDTO(3, "orange juice", 15));
+        items.add(new ItemDTO(4, "ice cream", 28));
     }
     
     

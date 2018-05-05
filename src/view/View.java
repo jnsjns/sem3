@@ -25,7 +25,15 @@ public class View {
         System.out.println("Starting sample execution.");
         contr.startSale();
         System.out.println("After call to sartSale()");
-        String saleInfo = contr.addItem(1);
-        System.out.println("saleInfo: " + saleInfo);
+        System.out.println("Scanning first item");
+        String saleInfo = contr.addItem(2);
+        System.out.println(saleInfo);
+        System.out.println("Scanning second item");
+        saleInfo = contr.addItem(3);
+        System.out.println(saleInfo);
+        System.out.println("Scanning third item");
+        saleInfo = contr.addItem(1);
+        System.out.println(saleInfo);
+        System.out.println("Completing sale");
     }
 }
