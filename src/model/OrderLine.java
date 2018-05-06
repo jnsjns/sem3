@@ -6,7 +6,7 @@
 package model;
 
 /**
- *
+ * The order lines of items in the sale, containing name and price.
  * @author Jonas
  */
 public final class OrderLine {

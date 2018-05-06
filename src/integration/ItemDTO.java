@@ -6,7 +6,7 @@
 package integration;
 
 /**
- *
+ * The object of items that are stored in the (@link ItemRegistry).
  * @author Jonas
  */
 public final class ItemDTO {

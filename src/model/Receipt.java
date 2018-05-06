@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- *
+ * Creates the receipt that is to be printed be the (@link Printer)
  * @author Jonas
  */
 public class Receipt {
@@ -29,6 +29,10 @@ public class Receipt {
         this.change = change;
     }
     
+    /**
+     * Creates the format of the receipt and stores it in a string.
+     * @return the string created.
+     */
     public String createPrintableReceipt(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("\n\nThanks for shopping at POS \n\n");

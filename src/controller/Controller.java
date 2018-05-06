@@ -26,20 +26,34 @@ public class Controller {
     public void startSale() {
         sale = new Sale();
     }
-    
+    /**
+     * Fetches an item with corresponding itemID from the Item Registry and adds
+     * it as an order line in the sale.
+     * 
+     * @param itemId The ID of the scanned item that is added to the sale.
+     * @return saleInfo contains a string of the sale that the view can display.
+     */
     public String addItem(int itemId){
         ItemDTO item = itemRegistry.getItem(itemId);
         String saleInfo = sale.addItem(item);
         return saleInfo;
     }
-    
+    /**
+     * Completes the sale after all items has been added to the sale.
+     * @return The total price the customer has to pay as a double.
+     */
     public double completeSale(){
         return sale.completeSale();
     }
     
+    /**
+     * The sale is paid for and enables receipt to be printed. The sale is logged
+     * in external systems.
+     * @param paidAmount The amount paid by the customer.
+     */
     public void enterPaidAmount(int paidAmount){
         Payment payment = new Payment(paidAmount);
         sale.pay(payment);
-        exHandler.logSale(sale);
+        exHandler.logSale(sale.getSaleInfo());
     }
 }

@@ -6,7 +6,7 @@
 package model;
 
 /**
- *
+ * Prints the receipt.
  * @author Jonas
  */
 public class Printer {
@@ -16,6 +16,9 @@ public class Printer {
         this.stringToPrint = stringToPrint;
     }
     
+    /**
+     * Prints a string that is created by the (@link Receipt).
+     */
     public void printReceipt(){
         System.out.println(stringToPrint);
     }
