@@ -34,8 +34,8 @@ public class Sale {
      * @return A string of the current sale information to be displayed by the view
      */
     public String addItem(ItemDTO item){
-        itemName = item.getName(item);
-        itemPrice = item.getPrice(item);
+        itemName = item.getName();
+        itemPrice = item.getPrice();
         runningTotal = runningTotal + itemPrice;
         createOrderLine(itemName, itemPrice);
         saleInfo = buildString();
@@ -47,7 +47,7 @@ public class Sale {
      * @param name The name of the item to be added to the list.
      * @param price The price of the item to be added to the list.
      */
-    public void createOrderLine(String name, int price){
+    private void createOrderLine(String name, int price){
         OrderLine orderLine = new OrderLine(name, price);
         orderLines.add(orderLine);
     }
@@ -57,7 +57,7 @@ public class Sale {
      * list of orders and adds them all to a string.
      * @return a string containing current sale information.
      */  
-    public String buildString(){
+    private String buildString(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Sale Information \n");
         for(OrderLine orderLine : orderLines){
@@ -71,7 +71,7 @@ public class Sale {
      * Finalizes the sale. Calculates the tax of the sale.
      * @return A double containing the new price after tax.
      */
-    public double completeSale(){
+    public double completeSale(){       
         return calculateTax();
     }
     
@@ -80,7 +80,7 @@ public class Sale {
      * and returns a new price after tax.
      * @return The result of the multiplication.
      */
-    public double calculateTax(){
+    private double calculateTax(){
         return totalPrice = ((double)runningTotal * (1+TAX_PERCENTAGE/100));    
     }
     

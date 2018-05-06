@@ -26,13 +26,6 @@ public class ReceiptTest {
     public ReceiptTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
     
     @Before
     public void setUp() {
@@ -52,7 +45,7 @@ public class ReceiptTest {
         orderLines.add(new OrderLine("banana", 20));
         SaleDTO saleDTO = new SaleDTO(LocalDateTime.of(2018, 1, 1, 1, 1), orderLines, 20, 56);
                
-        System.out.println("createPrintableReceipt");
+
         Receipt instance = new Receipt(saleDTO, payment, 56.0);
         String expResult = "\n\nThanks for shopping at POS \n" +
                             "\n" +

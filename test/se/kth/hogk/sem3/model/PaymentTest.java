@@ -20,15 +20,7 @@ public class PaymentTest {
     
     public PaymentTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+      
     @Before
     public void setUp() {
     }

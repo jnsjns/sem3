@@ -20,16 +20,18 @@ public final class ItemDTO {
         this.price = price;
     }
     
-    public int getId(ItemDTO item){
+    public int getId(){
         return this.id;
     }
     
-    public int getPrice(ItemDTO item){
+    public int getPrice(){
         return this.price;
     }
     
-    public String getName(ItemDTO item){
+    public String getName(){
         return this.name;
     }
+    
+   
     
 }

@@ -38,12 +38,13 @@ public class Controller {
      */
     public String addItem(int itemId){
         ItemDTO item = itemRegistry.getItem(itemId);
+        if(item == null ) return "Item not found.";
         String saleInfo = sale.addItem(item);
         return saleInfo;
     }
     /**
      * Completes the sale after all items has been added to the sale.
-     * @return The total price the customer has to pay as a double.
+     * @return The total price after tax the customer has to pay as a double.
      */
     public double completeSale(){
         return sale.completeSale();

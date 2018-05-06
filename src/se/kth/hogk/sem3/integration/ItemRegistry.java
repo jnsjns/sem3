@@ -29,7 +29,7 @@ public class ItemRegistry {
      */
     public ItemDTO getItem(int itemId){
         for(ItemDTO item : items){
-            if (item.getId(item) == itemId){
+            if (item.getId() == itemId){
                 return item;
             }
         }

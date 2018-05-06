@@ -10,7 +10,7 @@ import java.util.List;
 import se.kth.hogk.sem3.model.OrderLine;
 
 /**
- *
+ * Contains information of sale that receipt needs.
  * @author Jonas
  */
 public class SaleDTO {
