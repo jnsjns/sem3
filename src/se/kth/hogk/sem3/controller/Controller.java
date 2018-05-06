@@ -51,8 +51,8 @@ public class Controller {
     }
     
     /**
-     * The sale is paid for and enables receipt to be printed. The sale is logged
-     * in external systems.
+     * The sale is paid for and enables receipt to be printed. Initiates printer class.
+     * The sale is logged in external systems.
      * @param paidAmount The amount paid by the customer.
      */
     public void enterPaidAmount(int paidAmount){

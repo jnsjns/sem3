@@ -1,7 +1,7 @@
 package se.kth.hogk.sem3.view;
 
 import se.kth.hogk.sem3.controller.Controller;
-import se.kth.hogk.sem3.model.Sale;
+
 
 /**
  * This is a placeholder for the view. It contains only hardcoded calls to the controller.
@@ -24,7 +24,6 @@ public class View {
     public void sampleExecution() {
         System.out.println("Starting sample execution.");
         contr.startSale();
-        System.out.println("After call to sartSale()");
         System.out.println("Scanning first item");
         String saleInfo = contr.addItem(2);
         System.out.println(saleInfo);

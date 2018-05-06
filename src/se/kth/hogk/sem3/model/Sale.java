@@ -26,7 +26,7 @@ public class Sale {
      */
     public Sale() {
         saleTime = LocalDateTime.now();  
-        this.orderLines = new ArrayList<OrderLine>();
+        this.orderLines = new ArrayList<>();
     }
     /**
      * Saves an item to the sale and updates the <code>runningTotal</code>.
@@ -53,7 +53,7 @@ public class Sale {
     }
     
     /**
-     * Build the string that is sent to view to be displayed. Goes through the
+     * Build the string that is sent to view to be displayed. Loops through the
      * list of orders and adds them all to a string.
      * @return a string containing current sale information.
      */  
@@ -61,9 +61,15 @@ public class Sale {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Sale Information \n");
         for(OrderLine orderLine : orderLines){
-            stringBuilder.append("Name: " + orderLine.getName() + "  Price: " + orderLine.getPrice() + "\n");
+            stringBuilder.append("Name: ")
+                         .append(orderLine.getName())
+                         .append("  Price: ")
+                         .append(orderLine.getPrice())
+                         .append("\n");
         }
-        stringBuilder.append("\nRunning Total: " + runningTotal + "\n");
+        stringBuilder.append("\nRunning Total: ")
+                     .append(runningTotal)
+                     .append("\n");
         return stringBuilder.toString();         
     }
     
