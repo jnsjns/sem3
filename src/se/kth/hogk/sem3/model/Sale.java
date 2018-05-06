@@ -1,5 +1,6 @@
 package se.kth.hogk.sem3.model;
 
+import se.kth.hogk.sem3.integration.Printer;
 import se.kth.hogk.sem3.integration.ItemDTO;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -9,13 +10,13 @@ import java.util.List;
  * Collects all information regarding a particular sale.
  */
 public class Sale {
-    private LocalDateTime saleTime;
+    private final LocalDateTime saleTime;
     private int runningTotal;
     private int itemPrice;
     private double totalPrice;
     private String itemName;
     private String saleInfo;
-    private List<OrderLine> orderLines;
+    private final List<OrderLine> orderLines;
     private static final double TAX_PERCENTAGE = 15;
     
     
@@ -89,7 +90,7 @@ public class Sale {
      * @param payment the amount paid by the customer.
      */
     public void pay(Payment payment){
-       double change = payment.calculateChange(totalPrice, payment.getPayment());
+       double change = payment.calculateChange(totalPrice);
        Receipt receipt = new Receipt(this, payment, change);
        Printer printer = new Printer(receipt.createPrintableReceipt());
        printer.printReceipt();

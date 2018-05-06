@@ -14,6 +14,9 @@ public class Payment {
     private final int paidAmount;
     
     public Payment(int paidAmount){
+        if(paidAmount < 0){
+            throw new IllegalArgumentException("paidAmount can't be negative");
+        }
         this.paidAmount = paidAmount;
     }
     
@@ -26,7 +29,10 @@ public class Payment {
      * @param paidAmount The amount paid by the customer.
      * @return the result of the subtraction.
      */
-    public double calculateChange(double totalPrice, int paidAmount){
+    public double calculateChange(double totalPrice){
+        if(totalPrice < 0 && totalPrice<paidAmount){
+            throw new IllegalArgumentException("Total price can't be negative or less than paid amount");
+        }
         return (paidAmount - totalPrice);
     }
 }

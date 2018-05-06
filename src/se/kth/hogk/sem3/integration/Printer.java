@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package se.kth.hogk.sem3.model;
+package se.kth.hogk.sem3.integration;
 
 /**
  * Prints the receipt.

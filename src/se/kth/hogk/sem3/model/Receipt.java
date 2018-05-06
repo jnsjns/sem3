@@ -34,17 +34,22 @@ public class Receipt {
      * @return the string created.
      */
     public String createPrintableReceipt(){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("\n\nThanks for shopping at POS \n\n");
-        stringBuilder.append(saleTime + "\n");        
-        for(OrderLine orderLine : orderLines){
-            stringBuilder.append(orderLine.getName() + "        " + orderLine.getPrice() + "\n");
+        StringBuilder stringBuilder = new StringBuilder()
+                .append("\n\nThanks for shopping at POS \n\n")
+                .append(saleTime + "\n");
+
+        for (OrderLine orderLine : orderLines) {
+            stringBuilder.append(orderLine.getName())
+                    .append("        ")
+                    .append(orderLine.getPrice())
+                    .append("\n");      
         }
-        stringBuilder.append("-----------------------" + "\n");
-        stringBuilder.append("Total price: " + totalPrice + "\n");
-        stringBuilder.append("Total price after tax: " + totalPriceAfterTax + "\n");
-        stringBuilder.append("Total paid: " + payment + "\n");
-        stringBuilder.append("Change: " + change + "\n");
+
+        stringBuilder.append("-----------------------\n")
+                .append("Total price: " + totalPrice + "\n")
+                .append("Total price after tax: " + totalPriceAfterTax + "\n")
+                .append("Total paid: " + payment + "\n")
+                .append("Change: " + change + "\n");
         return stringBuilder.toString();
     }
 }
