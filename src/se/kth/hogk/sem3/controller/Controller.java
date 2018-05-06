@@ -3,6 +3,7 @@ package se.kth.hogk.sem3.controller;
 import se.kth.hogk.sem3.integration.ExternalSystemHandler;
 import se.kth.hogk.sem3.integration.ItemDTO;
 import se.kth.hogk.sem3.integration.ItemRegistry;
+import se.kth.hogk.sem3.integration.Printer;
 import se.kth.hogk.sem3.model.Payment;
 import se.kth.hogk.sem3.model.Sale;
 
@@ -13,9 +14,11 @@ public class Controller {
     private Sale sale;
     private final ItemRegistry itemRegistry;
     private final ExternalSystemHandler exHandler;
+    private final Printer printer;
     
     public Controller(ExternalSystemHandler exHandler){
         this.exHandler = new ExternalSystemHandler();
+        this.printer = exHandler.getPrinter();
         this.itemRegistry = exHandler.getItemRegistry();
     }
     
@@ -53,7 +56,7 @@ public class Controller {
      */
     public void enterPaidAmount(int paidAmount){
         Payment payment = new Payment(paidAmount);
-        sale.pay(payment);
+        printer.printReceipt(sale.pay(payment));
         exHandler.logSale(sale.getSaleInfo());
     }
 }

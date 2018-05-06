@@ -12,13 +12,18 @@ package se.kth.hogk.sem3.integration;
  */
 public class ExternalSystemHandler {
     private final ItemRegistry itemReg = new ItemRegistry();
+    private final Printer printer = new Printer();
 
     public ItemRegistry getItemRegistry(){
         return itemReg;
     }
+    
+    public Printer getPrinter(){
+        return printer;
+    }
     /**
      * Fetches a wanted item from the (@link ItemRegistry)
-     * @param ItemId the Id of the item searcged for.
+     * @param ItemId the Id of the item searched for.
      * @return the item found.
      */
     public ItemDTO getItem(int ItemId){

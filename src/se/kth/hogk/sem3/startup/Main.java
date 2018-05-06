@@ -12,9 +12,6 @@ public class Main {
      * @param args The program does not take any command line parameters. 
      */
     public static void main(String[] args) {
-        ExternalSystemHandler exHandler = new ExternalSystemHandler();
-        Controller contr = new Controller(exHandler);
-        View view = new View(contr);
-        view.sampleExecution();
+        new View(new Controller(new ExternalSystemHandler())).sampleExecution();
     }
 }

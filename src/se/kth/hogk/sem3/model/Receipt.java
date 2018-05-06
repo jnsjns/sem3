@@ -40,7 +40,8 @@ public class Receipt {
 
         for (OrderLine orderLine : orderLines) {
             stringBuilder.append(orderLine.getName())
-                    .append("        ")
+                    .append((orderLine.getName().length() <= 8) ? "\t\t"
+                                : (orderLine.getName().length() <= 12) ? "\t" : "")
                     .append(orderLine.getPrice())
                     .append("\n");      
         }

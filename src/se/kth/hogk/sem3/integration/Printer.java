@@ -10,16 +10,15 @@ package se.kth.hogk.sem3.integration;
  * @author Jonas
  */
 public class Printer {
-    private final String stringToPrint;
     
-    public Printer(String stringToPrint){
-        this.stringToPrint = stringToPrint;
+    public Printer(){
+        
     }
     
     /**
      * Prints a string that is created by the (@link Receipt).
      */
-    public void printReceipt(){
+    public void printReceipt(String stringToPrint){
         System.out.println(stringToPrint);
     }
 }

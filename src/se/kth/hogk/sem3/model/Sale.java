@@ -89,11 +89,10 @@ public class Sale {
      * is created and printed by the (@link Printer)
      * @param payment the amount paid by the customer.
      */
-    public void pay(Payment payment){
+    public String pay(Payment payment){
        double change = payment.calculateChange(totalPrice);
        Receipt receipt = new Receipt(this, payment, change);
-       Printer printer = new Printer(receipt.createPrintableReceipt());
-       printer.printReceipt();
+       return (receipt.createPrintableReceipt());
     }
     
     public LocalDateTime getSaleTime(){
