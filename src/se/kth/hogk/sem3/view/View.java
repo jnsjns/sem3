@@ -1,7 +1,7 @@
-package view;
+package se.kth.hogk.sem3.view;
 
-import controller.Controller;
-import model.Sale;
+import se.kth.hogk.sem3.controller.Controller;
+import se.kth.hogk.sem3.model.Sale;
 
 /**
  * This is a placeholder for the view. It contains only hardcoded calls to the controller.

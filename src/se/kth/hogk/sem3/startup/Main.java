@@ -1,8 +1,8 @@
-package startup;
+package se.kth.hogk.sem3.startup;
 
-import controller.Controller;
-import integration.ExternalSystemHandler;
-import view.View;
+import se.kth.hogk.sem3.controller.Controller;
+import se.kth.hogk.sem3.integration.ExternalSystemHandler;
+import se.kth.hogk.sem3.view.View;
 
 /**
  * Starts the entire application.

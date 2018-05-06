@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package se.kth.hogk.sem3.model;
 
 /**
  * Handles customer part of the sale, what is paid and what is to be returned to

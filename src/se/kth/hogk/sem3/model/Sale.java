@@ -1,6 +1,6 @@
-package model;
+package se.kth.hogk.sem3.model;
 
-import integration.ItemDTO;
+import se.kth.hogk.sem3.integration.ItemDTO;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

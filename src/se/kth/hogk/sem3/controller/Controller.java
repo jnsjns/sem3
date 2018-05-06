@@ -1,10 +1,10 @@
-package controller;
+package se.kth.hogk.sem3.controller;
 
-import integration.ExternalSystemHandler;
-import integration.ItemDTO;
-import integration.ItemRegistry;
-import model.Payment;
-import model.Sale;
+import se.kth.hogk.sem3.integration.ExternalSystemHandler;
+import se.kth.hogk.sem3.integration.ItemDTO;
+import se.kth.hogk.sem3.integration.ItemRegistry;
+import se.kth.hogk.sem3.model.Payment;
+import se.kth.hogk.sem3.model.Sale;
 
 /**
  * This is the application's only controller. All calls to the model pass through here.
