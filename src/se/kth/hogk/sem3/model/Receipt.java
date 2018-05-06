@@ -7,6 +7,7 @@ package se.kth.hogk.sem3.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import se.kth.hogk.sem3.integration.SaleDTO;
 
 /**
  * Creates the receipt that is to be printed be the (@link Printer)
@@ -20,11 +21,11 @@ public class Receipt {
     private final double totalPriceAfterTax;
     private final double change;
     
-    public Receipt(Sale sale, Payment payment, double change){
-        this.saleTime = sale.getSaleTime();
-        this.orderLines = sale.getOrderLines();
-        this.totalPrice = sale.getTotalPrice();
-        this.totalPriceAfterTax = sale.getTotalPriceAfterTax();
+    public Receipt(SaleDTO saleDTO, Payment payment, double change){
+        this.saleTime = saleDTO.getSaleTime();
+        this.orderLines = saleDTO.getOrderLines();
+        this.totalPrice = saleDTO.getTotalPrice();
+        this.totalPriceAfterTax = saleDTO.getTotalPriceAfterTax();
         this.payment = payment.getPayment();
         this.change = change;
     }
@@ -45,7 +46,6 @@ public class Receipt {
                     .append(orderLine.getPrice())
                     .append("\n");      
         }
-
         stringBuilder.append("-----------------------\n")
                 .append("Total price: " + totalPrice + "\n")
                 .append("Total price after tax: " + totalPriceAfterTax + "\n")

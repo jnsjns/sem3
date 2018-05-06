@@ -1,10 +1,10 @@
 package se.kth.hogk.sem3.model;
 
-import se.kth.hogk.sem3.integration.Printer;
 import se.kth.hogk.sem3.integration.ItemDTO;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import se.kth.hogk.sem3.integration.SaleDTO;
 
 /**
  * Collects all information regarding a particular sale.
@@ -86,12 +86,14 @@ public class Sale {
     
     /**
      * Uses a (@link Payment) to calculate change to be given to customer. A (@link Receipt)
-     * is created and printed by the (@link Printer)
+     * is created and returned.
      * @param payment the amount paid by the customer.
+     * @return A string of the receipt.
      */
     public String pay(Payment payment){
        double change = payment.calculateChange(totalPrice);
-       Receipt receipt = new Receipt(this, payment, change);
+       SaleDTO saleDTO = new SaleDTO(saleTime, orderLines, runningTotal, totalPrice);
+       Receipt receipt = new Receipt(saleDTO, payment, change);
        return (receipt.createPrintableReceipt());
     }
     
